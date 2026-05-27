@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Myusic Player</title>
+
+  <link rel="stylesheet" href="styles.css"/>
+
+</head>
+
+<body class="dark-mode">
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+
+      <div class="brand">
+        Myusic
+      </div>
+
+      <ul class="nav-list">
+
+        <!-- HOME -->
+        <li class="nav-item active" data-key="home">
+
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path
+              d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V11.5z"
+              fill="currentColor"
+            />
+          </svg>
+
+        </li>
+
+        <!-- SEARCH -->
+        <li class="nav-item" data-key="search">
+
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <circle
+              cx="11"
+              cy="11"
+              r="6"
+              stroke="currentColor"
+              stroke-width="1.6"
+              fill="none"
+            />
+            <path
+              d="M21 21l-4.35-4.35"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+            />
+          </svg>
+
+        </li>
+
+        <!-- ALBUM -->
+        <li class="nav-item" data-key="album">
+
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="2"
+              stroke="currentColor"
+              stroke-width="1.6"
+              fill="none"
+            />
+            <circle
+              cx="8.5"
+              cy="8.5"
+              r="1.6"
+              fill="currentColor"
+            />
+          </svg>
+
+        </li>
+
+        <!-- FAVORITE -->
+        <li class="nav-item" data-key="fav">
+
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path
+              d="M12 21s-7-4.6-9-7.2C1.5 11.6 3 7 7 6c2.2-.6 4.2 1 5 2 0.8-1 2.8-2.6 5-2 4 1 5.5 5.6 4 7.8-2 2.6-9 7.2-9 7.2z"
+              fill="currentColor"
+            />
+          </svg>
+
+        </li>
+
+        <!-- SETTINGS -->
+        <li class="nav-item" data-key="settings">
+
+          <svg viewBox="0 0 24 24" width="20" height="20">
+
+            <path
+              d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7z"
+              fill="currentColor"
+            />
+
+            <path
+              d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a1 1 0 0 1 0 1.4l-1.4 1.4a1 1 0 0 1-1.4 0l-.1-.1a1 1 0 0 0-1.1-.2 7 7 0 0 1-2 .3 7 7 0 0 1-2-.3 1 1 0 0 0-1.1.2l-.1.1a1 1 0 0 1-1.4 0L4.9 18.6a1 1 0 0 1 0-1.4l.1-.1a1 1 0 0 0 .2-1.1 7 7 0 0 1-.3-2 7 7 0 0 1 .3-2 1 1 0 0 0-.2-1.1l-.1-.1a1 1 0 0 1 0-1.4L6.1 4.6a1 1 0 0 1 1.4 0l.1.1a1 1 0 0 0 1.1.2 7 7 0 0 1 2-.3 7 7 0 0 1 2 .3 1 1 0 0 0 1.1-.2l.1-.1a1 1 0 0 1 1.4 0l1.4 1.4a1 1 0 0 1 0 1.4l-.1.1a1 1 0 0 0-.2 1.1 7 7 0 0 1 .3 2 7 7 0 0 1-.3 2z"
+              fill="currentColor"
+            />
+
+          </svg>
+
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <!-- MAIN -->
+    <main class="main-area">
+
+      <section class="player-panel">
+
+        <!-- PLAYER -->
+        <div class="player-card">
+
+          <!-- COVER -->
+          <div class="cover-wrap">
+
+            <img
+              id="music-cover-img"
+              class="cover"
+              src="https://ar-hosting.pages.dev/1779700550396.jpg"
+            />
+
+          </div>
+
+          <!-- INFO -->
+          <div class="track-info">
+
+            <h3 id="music-title">
+              Multo
+            </h3>
+
+            <p id="music-artist">
+              Cup of Joe
+            </p>
+
+          </div>
+
+          <!-- PROGRESS -->
+          <div class="progress-row">
+
+            <span id="currentTime">
+              0:00
+            </span>
+
+            <input
+              id="progressBar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+            />
+
+            <span id="duration">
+              0:00
+            </span>
+
+          </div>
+
+          <!-- CONTROLS -->
+          <div class="controls-row">
+
+            <!-- REPEAT -->
+            <button
+              id="repeatBtn"
+              class="ctrl toggle"
+            >
+
+              <img
+                src="https://ar-hosting.pages.dev/1779750419745.jpg"
+                class="custom-icon"
+              />
+
+            </button>
+
+            <!-- PREVIOUS -->
+            <button
+              id="prevBtn"
+              class="ctrl small"
+            >
+
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path
+                  d="M11 6v12L3 12l8-6zm10 0v12l-8-6 8-6z"
+                  fill="currentColor"
+                />
+              </svg>
+
+            </button>
+
+            <!-- PLAY -->
+            <button
+              id="playPauseBtn"
+              class="ctrl big"
+            >
+            </button>
+
+            <!-- NEXT -->
+            <button
+              id="nextBtn"
+              class="ctrl small"
+            >
+
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path
+                  d="M13 6v12l8-6-8-6zM3 6v12l8-6L3 6z"
+                  fill="currentColor"
+                />
+              </svg>
+
+            </button>
+
+            <!-- SHUFFLE -->
+            <button
+              id="shuffleBtn"
+              class="ctrl toggle"
+            >
+
+              <img
+                src="https://ar-hosting.pages.dev/1779750420347.jpg"
+                class="custom-icon"
+              />
+
+            </button>
+
+            <!-- FAVORITE -->
+            <button
+              id="favBtn"
+              class="ctrl"
+            >
+
+              <svg
+                id="favIcon"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+              >
+
+                <path
+                  d="M12 21s-7-4.6-9-7.2C1.5 11.6 3 7 7 6c2.2-.6 4.2 1 5 2 0.8-1 2.8-2.6 5-2 4 1 5.5 5.6 4 7.8-2 2.6-9 7.2-9 7.2z"
+                  fill="currentColor"
+                />
+
+              </svg>
+
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <aside class="playlist-card">
+
+          <!-- SEARCH -->
+          <div
+            id="searchBox"
+            class="search-box is-hidden"
+          >
+
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search songs..."
+            >
+
+            <button id="searchClear">
+              ✕
+            </button>
+
+          </div>
+
+          <!-- ALBUM -->
+          <div
+            id="albumView"
+            class="album-view is-hidden"
+          >
+
+            <h4>
+              Artists
+            </h4>
+
+            <div
+              id="artistGrid"
+              class="artist-grid"
+            >
+            </div>
+
+          </div>
+
+          <!-- SETTINGS PANEL -->
+          <div
+            id="settingsPanel"
+            class="settings-panel is-hidden"
+          >
+
+            <h3 class="settings-title">
+              Settings
+            </h3>
+
+            <!-- DARK MODE -->
+            <div class="setting-item">
+
+              <div>
+
+                <h4>
+                  Dark Mode
+                </h4>
+
+                <p>
+                  Enable dark appearance
+                </p>
+
+              </div>
+
+              <label class="switch">
+
+                <input
+                  type="checkbox"
+                  id="themeToggle"
+                  checked
+                >
+
+                <span class="slider"></span>
+
+              </label>
+
+            </div>
+
+            <!-- BLUR -->
+            <div class="setting-item">
+
+              <div>
+
+                <h4>
+                  Blur Effect
+                </h4>
+
+                <p>
+                  Background blur intensity
+                </p>
+
+              </div>
+
+              <input
+                type="range"
+                id="blurRange"
+                min="0"
+                max="20"
+                value="8"
+              >
+
+            </div>
+
+            <!-- COVER SIZE -->
+            <div class="setting-item">
+
+              <div>
+
+                <h4>
+                  Cover Size
+                </h4>
+
+                <p>
+                  Resize album cover
+                </p>
+
+              </div>
+
+              <input
+                type="range"
+                id="coverSize"
+                min="180"
+                max="320"
+                value="240"
+              >
+
+            </div>
+
+            <!-- ANIMATION -->
+            <div class="setting-item">
+
+              <div>
+
+                <h4>
+                  Animation
+                </h4>
+
+                <p>
+                  Enable hover animations
+                </p>
+
+              </div>
+
+              <label class="switch">
+
+                <input
+                  type="checkbox"
+                  id="animToggle"
+                  checked
+                >
+
+                <span class="slider"></span>
+
+              </label>
+
+            </div>
+
+          </div>
+
+          <!-- PLAYLIST HEADER -->
+          <div
+            id="playlistHeader"
+            class="playlist-header"
+          >
+
+            <h4>
+              Playlist
+            </h4>
+
+            <div class="playlist-meta">
+
+              <span id="totalSongs">
+                0 songs
+              </span>
+
+              •
+
+              <span id="totalDuration">
+                0:00
+              </span>
+
+            </div>
+
+          </div>
+
+          <!-- PLAYLIST -->
+          <ul
+            id="playlist"
+            class="playlist-list"
+          >
+          </ul>
+
+          <!-- FOOTER -->
+          <div
+            id="playlistFooter"
+            class="playlist-footer is-hidden"
+          >
+
+            <span id="footerLeft"></span>
+
+            <span id="footerRight"></span>
+
+          </div>
+
+        </aside>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
