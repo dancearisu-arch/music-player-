@@ -79,70 +79,18 @@ document.getElementById("animToggle");
 
 const songs = [
 
-{
-  src:
-  "https://ar-hosting.pages.dev/1779700322878.mp3",
-
-  title:
-  "Multo",
-
-  artist:
-  "Cup of Joe",
-
-  cover:
-  "https://ar-hosting.pages.dev/1779700550396.jpg",
-
-  dur:180
-},
-
-{
-  src:
-  "https://ar-hosting.pages.dev/1779700954815.mp3",
-
-  title:
-  "Risk it all",
-
-  artist:
-  "Bruno Mars",
-
-  cover:
-  "https://ar-hosting.pages.dev/1779701431309.jpg",
-
-  dur:180
-},
-
-{
-  src:
-  "https://ar-hosting.pages.dev/1779701025681.mp3",
-
-  title:
-  "Kita",
-
-  artist:
-  "Sheila on 7",
-
-  cover:
-  "https://ar-hosting.pages.dev/1779701430706.jpg",
-
-  dur:180
-},
-
-{
-  src:
-  "https://ar-hosting.pages.dev/1779711485381.mp3",
-
-  title:
-  "Monolog",
-
-  artist:
-  "Pamungkas",
-
-  cover:
-  "https://ar-hosting.pages.dev/1779711457347.jpg",
-
-  dur:180
-}
-
+{ src: 'https://ar-hosting.pages.dev/1779700322878.mp3', title: 'Multo', artist: 'Cup of Joe', cover: 'https://ar-hosting.pages.dev/1779700550396.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779700954815.mp3', title: 'Risk it all', artist: 'Bruno mars', cover: 'https://ar-hosting.pages.dev/1779701431309.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779701025681.mp3', title: 'Kita', artist: 'Sheila on 7', cover: 'https://ar-hosting.pages.dev/1779701430706.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779701024884.mp3', title: 'Tampar', artist: 'Juicy Luicy', cover: 'https://ar-hosting.pages.dev/1779701432075.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779703128228.mp3', title: 'Bila kau tak di sampingku', artist: 'Sheila on 7', cover: 'https://ar-hosting.pages.dev/1779703231978.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779704561140.mp3', title: 'Akad', artist: 'Payung teduh', cover: 'https://ar-hosting.pages.dev/1779704547192.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779706280293.mp3', title: 'Aku milikmu', artist: 'Dewa 19', cover: 'https://ar-hosting.pages.dev/1779706295487.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779711078982.mp3', title: 'Sorai', artist: 'Nadin Amizah', cover: 'https://ar-hosting.pages.dev/1779711079561.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779711361498.mp3', title: 'Kembali pulang', artist: 'Suara kayu', cover: 'https://ar-hosting.pages.dev/1779711414995.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779711485381.mp3', title: 'Monolog', artist: 'Pamungkas', cover: 'https://ar-hosting.pages.dev/1779711457347.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779712916271.mp3', title: 'Sampai jadi debu', artist: 'Bandaneira', cover: 'https://ar-hosting.pages.dev/1779712896839.jpg', dur: 180 },
+  { src: 'https://ar-hosting.pages.dev/1779713316714.mp3', title: 'Bertaut', artist: 'Nadin Amizah', cover: 'https://ar-hosting.pages.dev/1779713251632.jpg', dur: 180 },
 ];
 
 /* =========================
